@@ -1,162 +1,170 @@
-<body>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-  <header>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Singaporean Food</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
     <h1>Singaporean Food</h1>
-  </header>
-  <nav> <!--menu systtm-->
-  <button class="button" id="hamIcon">Menu</button>
-  <ul>
-    <li><button class="button" id="page1btn">History</button></li>
-    <li><button class="button" id="page2btn">List</button></li>
-    <li><button class="button" id="page3btn">Food Culture</button></li>
-  </ul>
-  </nav>
-  <div id="pagecontainer">
-    <div class="page" id="page1">
-      <h2>History of Singaporean Food</h2>
-      <p>In 1918, Singapore was founded as an international shipping port. Due to this, Singapore's cuisine has been influenced by many different cultures</p>
-      <p>Singapore is located in between the Pacific and Indian oceans, surrounded by many Asian countries such as Indonesia, China, Malaysia and others. As such, the food and culture in Singapore is also just as diverse</p>
-      <img width="400" style="border:5px solid rgb(32,32,32)" src="images/singapore map.jpg"/>
-    </div>
-    <div class="page" id="page2">
-      <h2>List of Singaporean Food</h2>
-
-
-      <button class="button" id="chinesePagebtn">Chinese</button>
-      <div id="pageChineseFood">
-        <div class="chineseFoodPicture">
-          <h3>Popular Chinese Food</h3>
-          <div class="foodGroupLeft">
-            <img width=auto height=auto style="border:5px solid rgb(32,32,32)" src="images/chicken rice.jpg"/>
-            <div class="foodText">
-              <p>Chicken Rice</p>
-              <p>
-                One of the most popular and well know dish in Singapore. 
-                It is a dish consisted of poached chicken and seasoned rice, served with chili sauce and cucumber garnishes.
-              </p>
-                
-            </div>
-
-          </div>      
-
-          <br>
-          <div class="foodGroupLeft">
-            <img width=auto height=auto style="border:5px solid rgb(32,32,32)" src="images/hokkien mee.jpg"/>
-            <div class="foodText">
-              <p>Hokkien Mee</p>
-              <p>
-                It is a dish of egg noodles and rice noodles stir-fried with egg, pork, prawns and squid.
-                It is usually served with sambal chilli, calamansi limes and on some occasions, small cubes of fried lard.
-              </p>
-            </div>
-          </div>
-          <br>
-          <div class="foodGroupLeft">
-            <img width=auto height=auto style="border:5px solid rgb(32,32,32)" src="images/bak kut teh.jpg"/>
-            <div class="foodText">
-              <p>Bak Kut Teh</p>
-              <p>
-                The name literally translating to "Meat Bone Tea" in Hokkien dialect,
-                it is a dish consisting of pork ribs simmered in a broth with many herbs and spices in them.
-              </p>            
-            </div>
-          </div>
-          
+    <nav> <!--menu systtm-->
+    <button class="button" id="hamIcon">Menu</button>
+    <ul>
+      <li><button class="button" id="page1btn">History</button></li>
+      <li><button class="button" id="page2btn">List</button></li>
+      <li><button class="button" id="page3btn">Food Culture</button></li>
+    </ul>
+    </nav>
+    <div id="pagecontainer">
+      <div class="page" id="page1">
+        <h2>History of Singaporean Food</h2>
+        <div class="historyText">
+          <p>In 1918, Singapore was founded as an international shipping port. Due to this, Singapore's cuisine has been influenced by many different cultures</p>
+          <p>Singapore is located in between the Pacific and Indian oceans, surrounded by many Asian countries such as Indonesia, China, Malaysia and others. As such, the food and culture in Singapore is also just as diverse</p>
         </div>
+      
+        <img style="width:400px; border:5px solid rgb(32,32,32)" src="images/singapore_map.jpg" alt="Singapore Map">    </div>
+      <div class="page" id="page2">
+        <h2>List of Singaporean Food</h2>
 
-      </div>
 
-      <button class="button" id="malayPagebtn">Malay/Indonesian</button>
-      <div id="pageMalayFood">
-        <div class="malayFoodPicture">
-          <h3>Popular Malay/Indonesian Food</h3>
-            <div class="foodGroupRight">
+        <button class="button" id="chinesePageBtn">Chinese</button>
+        <div id="pageChineseFood">
+          <div class="chineseFoodPicture">
+            <h3>Popular Chinese Food</h3>
+            <div class="foodGroupLeft">
+              <img style="width:auto; height:auto; border:5px solid rgb(32,32,32)" src="images/chicken_rice.jpg" alt="Chicken Rice">
               <div class="foodText">
-                <p>Nasi Goreng</p>
+                <p>Chicken Rice</p>
                 <p>
-                  A fried rice dish with a rich aromatic, earthy and smoky flavor.
-                  It is prepared with 3 components, the ingredients such as egg and meat, the seasoning such as chilli pepepr and spring onion, and lastly the condiments
-                </p>                
+                  One of the most popular and well know dish in Singapore. 
+                  It is a dish consisted of poached chicken and seasoned rice, served with chili sauce and cucumber garnishes.
+                </p>
+                  
               </div>
-              <img width=auto style="border:5px solid rgb(32,32,32)" src="images/nasi goreng.jpg"/>
-             
+
             </div>      
+
             <br>
-            <div class="foodGroupRight">
+            <div class="foodGroupLeft">
+              <img style="width:auto; height:auto; border:5px solid rgb(32,32,32)" src="images/hokkien_mee.jpg" alt="Hokkien Mee">
               <div class="foodText">
-                <p>Satay</p>
+                <p>Hokkien Mee</p>
                 <p>
-                  A dish of seasoned, skewered and grilled meat, usually served with peanut sauce and a variety of other food.
-                  The meat can consist of chicken, pork, beef, lamb and so on, while the other foods served along side can consist of rice cake, cucumber and others.
-                </p>              
-              </div>
-              <img width=auto style="border:5px solid rgb(32,32,32)" src="images/satay.jpg"/>
-             
-            </div>
-            <br>
-            <div class="foodGroupRight">
-              <div class="foodText">
-                <p>Mee Rebus</p>
-                <p>
-                  Instead of having a regular soup base, this dish uses a spicy and sweet curry gravy instead.
-                  The noodles in the dish are yellow egg noodles.
+                  It is a dish of egg noodles and rice noodles stir-fried with egg, pork, prawns and squid.
+                  It is usually served with sambal chilli, calamansi limes and on some occasions, small cubes of fried lard.
                 </p>
               </div>
-              <img width=auto style="border:5px solid rgb(32,32,32)" src="images/mee rebus.jpg"/>
-             
+            </div>
+            <br>
+            <div class="foodGroupLeft">
+              <img style="width:auto; height:auto; border:5px solid rgb(32,32,32)" src="images/bak_kut_teh.jpg" alt="Bak Kut Teh">
+              <div class="foodText">
+                <p>Bak Kut Teh</p>
+                <p>
+                  The name literally translating to "Meat Bone Tea" in Hokkien dialect,
+                  it is a dish consisting of pork ribs simmered in a broth with many herbs and spices in them.
+                </p>            
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+
+        <button class="button" id="malayPageBtn">Malay/Indonesian</button>
+        <div id="pageMalayFood">
+          <div class="malayFoodPicture">
+            <h3>Popular Malay/Indonesian Food</h3>
+              <div class="foodGroupRight">
+                <div class="foodText">
+                  <p>Nasi Goreng</p>
+                  <p>
+                    A fried rice dish with a rich aromatic, earthy and smoky flavor.
+                    It is prepared with 3 components, the ingredients such as egg and meat, the seasoning such as chilli pepepr and spring onion, and lastly the condiments
+                  </p>                
+                </div>
+                <img style="width:auto; border:5px solid rgb(32,32,32)" src="images/nasi_goreng.jpg" alt="Nasi Goreng">
+              
+              </div>      
+              <br>
+              <div class="foodGroupRight">
+                <div class="foodText">
+                  <p>Satay</p>
+                  <p>
+                    A dish of seasoned, skewered and grilled meat, usually served with peanut sauce and a variety of other food.
+                    The meat can consist of chicken, pork, beef, lamb and so on, while the other foods served along side can consist of rice cake, cucumber and others.
+                  </p>              
+                </div>
+                <img style="width:auto; border:5px solid rgb(32,32,32)" src="images/satay.jpg" alt="Satay">
+              
+              </div>
+              <br>
+              <div class="foodGroupRight">
+                <div class="foodText">
+                  <p>Mee Rebus</p>
+                  <p>
+                    Instead of having a regular soup base, this dish uses a spicy and sweet curry gravy instead.
+                    The noodles in the dish are yellow egg noodles.
+                  </p>
+                </div>
+                <img style="width:auto; border:5px solid rgb(32,32,32)" src="images/mee_rebus.jpg" alt="Mee Rebus">
+              
+              </div>
+            
+          </div>
+
+        </div>
+        <button class="button" id="indianPageBtn">Indian</button>
+        <div id="pageIndianFood">
+          <div class="indianFoodPicture">
+            <h3>Popular Indian Food</h3>
+            <div class="foodGroupLeft">
+              <img style="width:auto; height:120px; border:5px solid rgb(32,32,32)" src="images/roti_prata.jpg" alt="Roti Prata">
+              <div class="foodText">
+                <p>Roti Prata</p>
+                <p>
+                  An indian flatbread dish, served with many types of curry. 
+                  This dish has a large amount of variety, as its ingredients can range from common ones such as meat or egg, and even more obscure ones such as banana or chocolate.
+                </p>            
+              </div>
+            </div>      
+            <br>
+            <div class="foodGroupLeft">
+              <img style="width:auto; height:140px; border:5px solid rgb(32,32,32)" src="images/indian_rojak.jpg" alt="Indian Rojak">
+              <div class="foodText">
+                <p>Indian Rojak</p>
+                <p>
+                  An assortment of different foods, such as potatoes, hard boiled eggs, tofu and prawn.
+                  It is also served with a sweet and spicy sauce made of peanuts and chilli.
+                </p>
+              </div>
+            </div>
+            <br>
+            <div class="foodGroupLeft">
+              <img style="width:auto; height:125px; border:5px solid rgb(32,32,32)" src="images/biryani.jpg" alt="Biryani">
+              <div class="foodText">
+                <p>Biryani</p>
+                <p>
+                  A mixed rice dish made with indian spices, vegetables, and some type of meat such as chicken, lamb or fish.
+                  It can be prepared in multiple ways, the two being "Pakki" which is cooked, and "Kacchi" which is raw.
+                </p>
+              </div>
             </div>
           
         </div>
 
+        </div>
+
+          
+
       </div>
-      <button class="button" id="indianPagebtn">Indian</button>
-      <div id="pageIndianFood">
-        <div class="indianFoodPicture">
-          <h3>Popular Indian Food</h3>
-          <div class="foodGroupLeft">
-            <img width=auto height=120 style="border:5px solid rgb(32,32,32)" src="images/roti prata.jpg"/>
-            <div class="foodText">
-              <p>Roti Prata</p>
-              <p>
-                An indian flatbread dish, served with many types of curry. 
-                This dish has a large amount of variety, as its ingredients can range from common ones such as meat or egg, and even more obscure ones such as banana or chocolate.
-              </p>            
-            </div>
-          </div>      
-          <br>
-          <div class="foodGroupLeft">
-            <img width=auto height=140 style="border:5px solid rgb(32,32,32)" src="images/indian rojak.jpg"/>
-            <div class="foodText">
-              <p>Indian Rojak</p>
-              <p>
-                An assortment of different foods, such as potatoes, hard boiled eggs, tofu and prawn.
-                It is also served with a sweet and spicy sauce made of peanuts and chilli.
-              </p>
-            </div>
-          </div>
-          <br>
-          <div class="foodGroupLeft">
-            <img width=auto height=125 style="border:5px solid rgb(32,32,32)" src="images/biryani.jpg"/>
-            <div class="foodText">
-              <p>Biryani</p>
-              <p>
-                A mixed rice dish made with indian spices, vegetables, and some type of meat such as chicken, lamb or fish.
-                It can be prepared in multiple ways, the two being "Pakki" which is cooked, and "Kacchi" which is raw.
-              </p>
-            </div>
-          </div>
+      <div class="page" id="page3">
+        <h2>Food Culture In Singapore</h2>
         
       </div>
-
-      </div>
-
-        
-
     </div>
-    <div class="page" id="page3">
-      <h2>Food Culture In Singapore</h2>
-      
-    </div>
-  </div>
-</body>
+  </body>
+</html>

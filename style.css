@@ -1,4 +1,9 @@
+html{
+  height: 100%;
+}
+
 body{
+  height: 100%;
   background: radial-gradient(rgba(80,80,80,1) 0%, rgba(56,56,56,1) 50%, rgba(32,32,32,1) 100%);
   font-family:'Courier New', Courier, monospace;
 }
@@ -32,10 +37,8 @@ h3{
 
 
 #page1{
-  display:grid;
   text-align: center;
-  grid-template-columns: 5% 45% 45% 5%;
-  grid-template-rows: 25% 25% 30% 30%;
+
 }
 
 #page2{
@@ -82,9 +85,15 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
   .buttonOnPage {background-color: rgb(168, 168, 168); opacity: 1;
 }
 
+.historyText
+{
+   color: rgb(115, 201, 255);
+}
+
+
 #chinesePageBtn
 {
-  background: rgb(200, 0, 0);;
+  background: rgb(200, 0, 0);
   width:100%;
   color:black;
 }
@@ -137,6 +146,7 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
   display:inline-block;
   text-align:left;
   border: 2px solid black;
+  
 
   transition: height 1s;
 }
@@ -144,8 +154,8 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
 .foodText
 {
   font-weight: bold;
-  padding-left: 20;
-  padding-right: 20;
+  padding-left: 20px;
+  padding-right: 20px;
   color:gray;
 }
 
@@ -154,8 +164,8 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
   display: inline-flex;
   justify-content: left;
   text-align: left;
-  padding-left: 50;
-  padding-bottom: 50;
+  padding-left: 50px;
+  padding-bottom: 50px;
   width:90%;
 }
 
@@ -164,24 +174,38 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
   display: inline-flex;
   justify-content: right;
   text-align: right;
-  padding-left: 50;
-  padding-bottom: 50;
+  padding-left: 50px;
+  padding-bottom: 50px;
   width:90%
 }
 
 .chineseFoodPicture
 {
+  max-height: 0;
+  margin-top:15px;
+  
+  overflow: hidden;
   opacity: 0;
   transition: opacity 0.5s;
 }
 
 .malayFoodPicture
 {
+  max-height: 0;
+  margin-top:15px;
+
+  overflow: hidden;
+
   opacity: 0;
   transition: opacity 0.5s;
 }
 .indianFoodPicture
 {
+  max-height: 0;
+  margin-top:15px;
+
+  overflow: hidden;
+
   opacity: 0;
   transition: opacity 0.5s;
 }

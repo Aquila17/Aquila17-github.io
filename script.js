@@ -6,6 +6,7 @@ var allpages=document.querySelectorAll(".page");
 var dropDown;
 var pageHeight = 0;
 var fading;
+var overflow;
 var contentOpacity = 0;
 
 //select all subtopic pages
@@ -33,13 +34,16 @@ function toggleFoodList(pgno, content){ //function to show selected page no
     if(onepage.style.height == 0 +"%" || onepage.style.height=="")
     {
         onepage.style.height = 125 +"%";
-        fading = setTimeout(() => fadeAnimation(content, 1),300);
+        fading = setTimeout(() => fadeAnimation(content, 1),600);
+        overflow = setTimeout(() => setOverflow(content, "visible"),600);
+
         //dropDown = setInterval(() => dropDownAnimation(onepage, +5, 300),10);
     }
     else
     {
         onepage.style.height = 0 +"%";
         fading = setTimeout(() => fadeAnimation(content, -1),100);
+        overflow = setTimeout(() => setOverflow(content, "hidden"),100);
     }
     /*if(onepage.style.display=="block")
         onepage.style.display="none";
@@ -70,9 +74,9 @@ function toggleMenus(){ /*open and close menu*/
 }//can optimize using toggle class with css transitions
 
 
-const chinesePagebtn=document.querySelector("#chinesePagebtn");
-const malayPagebtn=document.querySelector("#malayPagebtn");
-const indianPagebtn=document.querySelector("#indianPagebtn");
+const chinesePagebtn=document.querySelector("#chinesePageBtn");
+const malayPagebtn=document.querySelector("#malayPageBtn");
+const indianPagebtn=document.querySelector("#indianPageBtn");
 
 
 
@@ -97,8 +101,18 @@ function fadeAnimation(page, amount)
 {
    
     if(amount > 0)
+    {
         page.style.opacity = "1";
+    }
     else if (amount < 0)
-        page.style.opacity = "0";
+    {
 
+        page.style.opacity = "0";
+    }
+
+}
+
+function setOverflow(page, displaySet)
+{
+    page.style.overflow = displaySet;
 }
