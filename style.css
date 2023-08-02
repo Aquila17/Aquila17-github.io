@@ -10,27 +10,36 @@ h1 {
   font-family:'Courier New', Courier, monospace;
 }
 
+h2{
+  color: rgb(50, 107, 207);
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+}
+
+h3{
+  color:rgb(150,150,150);
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+}
+
+
 #pagecontainer
 {
   display:flex;
   align-items: center;
   justify-content: center;
 }
-.page{width:95vw;height:80vh;border:1px solid red;}
-nav ul li{display:inline; align-items: center; justify-content: center;}
+
 
 #page1{
-  background:red;
   display:grid;
   text-align: center;
   grid-template-columns: 5% 45% 45% 5%;
   grid-template-rows: 25% 25% 30% 30%;
 }
+
 #page2{
-  display:grid;
   text-align: center;
-  grid-template-columns: 5% 30% 30% 30% 5%;
-  grid-template-rows: 33% 33% 33%;
 }
 
 #page3{
@@ -41,23 +50,19 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
   grid-template-rows: 25% 25% 30% 30%;
 }
 
+.page{width:90vw;height:80vh;}
+nav ul{display:inline; align-items: center; justify-content: center;}
+nav ul li{display:inline; align-items: center; justify-content: center;}
 
 /*for responsive menu*/
-#hamIcon{display:none;}
-
-@media screen and (max-width:800px){
-  nav ul li{display:block;} /*make a menu items vertical*/
-  #hamIcon{display: block;} /* unhide menu icon */
-  nav ul{display:none;} /*hide the menu item list*/
-  
-}
+#hamIcon{display:none; margin: auto}
 
 .button {
   border: 5px solid black; /* Green */
   color: rgb(0, 67, 167);
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
-  width:30%;
+  width:30.5%;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -79,62 +84,144 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
 
 #chinesePageBtn
 {
-  background: darkred;
+  background: rgb(200, 0, 0);;
   width:100%;
+  color:black;
+}
+
+#malayPageBtn
+{
+  background: rgb(0, 200, 0);;
+  width:100%;
+  color:black;
+
+}
+
+#indianPageBtn
+{
+  background: rgb(0, 0, 200);;
+  width:100%;
+  color:black;
+
 }
 
 #pageChineseFood
 {
-  background: red;
-  height:0px;
-  width:100%;
+  background: rgb(255, 0, 0,0.25);
+  height:0%;
+  width:99%;
   display:inline-block;
   text-align:left;
-  
+  border: 2px solid black;
   
   transition: height 1s;
 }
 
 #pageMalayFood
 {
-  background: green;
-  height:0px;
-  display:grid;
-  text-align: center;
-  grid-template-columns: 5% 30% 30% 30% 5%;
-  grid-template-rows: 5% 45% 45% 5%;
+  background: rgb(0, 255, 0,0.25);;
+  height:0%;
+  width:99%;
+  display:inline-block;
+  text-align:left;
+  border: 2px solid black;
+
   transition: height 1s;
 }
 
 #pageIndianFood
 {
-  background: blue;
-  height:0px;
-  display:grid;
-  text-align: center;
-  grid-template-columns: 5% 30% 30% 30% 5%;
-  grid-template-rows: 5% 45% 45% 5%;
+  background: rgb(0, 0, 255,0.25);;
+  height:0%;
+  width:99%;
+  display:inline-block;
+  text-align:left;
+  border: 2px solid black;
+
   transition: height 1s;
 }
 
-#foodText
+.foodText
 {
   font-weight: bold;
-  text-decoration: underline;
+  padding-left: 20;
+  padding-right: 20;
+  color:gray;
 }
 
-.foodGroup
+.foodGroupLeft
 {
-  display: flex;
+  display: inline-flex;
+  justify-content: left;
+  text-align: left;
+  padding-left: 50;
+  padding-bottom: 50;
+  width:90%;
 }
 
-.chineseFoodPictureTop
+.foodGroupRight
+{
+  display: inline-flex;
+  justify-content: right;
+  text-align: right;
+  padding-left: 50;
+  padding-bottom: 50;
+  width:90%
+}
+
+.chineseFoodPicture
 {
   opacity: 0;
   transition: opacity 0.5s;
 }
 
-.chineseFoodPictureBottom
+.malayFoodPicture
 {
-  opacity:0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.indianFoodPicture
+{
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+@media screen and (max-width:800px){
+  nav ul li{display:block;} /*make a menu items vertical*/
+  #hamIcon{display: block;} /* unhide menu icon */
+  nav ul{display:none;} /*hide the menu item list*/
+
+  .page{height:135vh;}
+
+  .foodGroupLeft
+  {
+    display:block; 
+    justify-content: center; 
+    text-align: center; 
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .foodGroupRight
+  {
+    display:block; 
+    justify-content: center; 
+    text-align: center; 
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .foodText
+  {
+    display:block; 
+    justify-content: center; 
+    text-align: center; 
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  
 }

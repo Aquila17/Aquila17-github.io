@@ -23,23 +23,23 @@ function show(pgno){ //function to show selected page no
     //select the page based on the parameter passed in
     let onepage=document.querySelector("#page"+pgno);
     //show the page
-    onepage.style.display="block";
+    onepage.style.display="inline";
 }
 
-function toggleFoodList(pgno){ //function to show selected page no
+function toggleFoodList(pgno, content){ //function to show selected page no
     //select the page based on the parameter passed in
     let onepage=document.querySelector("#page"+pgno);
     //show the page
-    if(onepage.style.height == 0 +"px" || onepage.style.height=="")
+    if(onepage.style.height == 0 +"%" || onepage.style.height=="")
     {
-        onepage.style.height = 600;
-        fading = setTimeout(() => fadeAnimation(chineseContent, 1),300);
+        onepage.style.height = 125 +"%";
+        fading = setTimeout(() => fadeAnimation(content, 1),300);
         //dropDown = setInterval(() => dropDownAnimation(onepage, +5, 300),10);
     }
     else
     {
-        onepage.style.height = 0;
-        fading = setTimeout(() => fadeAnimation(chineseContent, -1),100);
+        onepage.style.height = 0 +"%";
+        fading = setTimeout(() => fadeAnimation(content, -1),100);
     }
     /*if(onepage.style.display=="block")
         onepage.style.display="none";
@@ -79,16 +79,18 @@ const indianPagebtn=document.querySelector("#indianPagebtn");
 /*Listen for clicks on the buttons, assign anonymous
 eventhandler functions to call show function*/
 chinesePagebtn.addEventListener("click", function () {
-    toggleFoodList("ChineseFood");
+    toggleFoodList("ChineseFood",chineseContent);
 });
 malayPagebtn.addEventListener("click", function () {
-    toggleFoodList("MalayFood");
+    toggleFoodList("MalayFood",malayContent);
 });
 indianPagebtn.addEventListener("click", function () {
-    toggleFoodList("IndianFood");
+    toggleFoodList("IndianFood",indianContent);
 });
 
-const chineseContent=document.querySelector(".chineseFoodPictureTop");
+const chineseContent=document.querySelector(".chineseFoodPicture");
+const malayContent=document.querySelector(".malayFoodPicture");
+const indianContent=document.querySelector(".indianFoodPicture");
 
 
 function fadeAnimation(page, amount)
