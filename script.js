@@ -9,6 +9,17 @@ var fading;
 var overflow;
 var contentOpacity = 0;
 
+var playerX;
+var playerY;
+
+var distX;
+var distY;
+
+var destinationX;
+var destinationY;
+
+var bounds;
+
 //select all subtopic pages
 console.log(allpages);
 hideall();
@@ -116,3 +127,68 @@ function setOverflow(page, displaySet)
 {
     page.style.overflow = displaySet;
 }
+
+const player = document.getElementById("player");
+const simulator = document.querySelector(".simulator");
+
+simulator.addEventListener("mousemove", followMouse)
+
+function followMouse(event)
+{
+    bounds = simulator.getBoundingClientRect();
+
+    destinationX = event.clientX - bounds.left - bounds.width * 0.5;
+    destinationY = event.clientY  - bounds.top - bounds.height;
+    destinationY += player.getBoundingClientRect().height * 0.5;
+
+   
+    
+   
+
+}
+
+function ResetPos() {
+    playerX = 0;
+    playerY = 0; //reset to zero
+    distX = 0;
+    distY = 0;
+    destinationX = 0;
+    destinationY = 0;
+    bounds = simulator.getBoundingClientRect();
+    
+}
+
+function MovePos(leftInc, topInc) {
+    playerX += leftInc;
+    playerY += topInc;
+    UpdatePlayerStyle();
+}
+    
+//function to update ball css as well as display text
+function UpdatePlayerStyle(){
+    distX = destinationX - playerX;
+    distY = destinationY - playerY;
+    playerX += distX * 0.05;
+    playerY += distY * 0.05;
+
+    console.log("player: " + Math.abs(playerY));
+    console.log("yes: " +  bounds.top);
+    if(Math.abs(playerY) > bounds.top)
+    {
+        playerY = -bounds.top;
+    }
+    
+
+
+    //player.style.left = playerX+"px"; //set left property to ball x variable
+   // player.style.top = playerY+"px"; //set top property to ball x variable
+
+   player.style.left = playerX + "px";
+   player.style.top = playerY + "px";
+
+   requestAnimationFrame(UpdatePlayerStyle);
+}
+    
+ResetPos();
+UpdatePlayerStyle();
+
