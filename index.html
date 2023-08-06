@@ -18,19 +18,25 @@
     </ul>
     </nav>
     <div id="pagecontainer">
+
+      <!--History Tab-->
+
       <div class="page" id="page1">
         <h2>History of Singaporean Food</h2>
+
+        <!--History Content-->
+
         <div class="historyLeft">
           <div class="historyText">
             <p>In 1918, Singapore was founded as an international shipping port. Due to this, Singapore's cuisine has been influenced by many different cultures</p>
             <p>Singapore is located in between the Pacific and Indian oceans, surrounded by many Asian countries such as Indonesia, China, Malaysia and others. As such, the food and culture in Singapore is also just as diverse</p>
           </div>
         
-          <img style="width:500px; border:5px solid rgb(32,32,32)" src="images/singapore_map.jpg" alt="Singapore Map">
+          <img style="width:40%; border:5px solid rgb(32,32,32)" src="images/singapore_map.jpg" alt="Singapore Map">
         </div>
 
         <div class="historyRight">
-          <img style="width:600px; height:300px; border:5px solid rgb(32,32,32)" src="images/kaya_toast.jpg" alt="Singapore Map">
+          <img style="width:40%; border:5px solid rgb(32,32,32)" src="images/kaya_toast.jpg" alt="Kaya Toast">
           <div class="historyText">
             <p>
               Although Raffles arrived in Singapore in 1819, it is believed that some popular Singaporean food known today orignated before he arrived.
@@ -61,7 +67,7 @@
             </p>
         
           </div>
-          <img style="width:400px; border:5px solid rgb(32,32,32)" src="images/hawker_center.jpg" alt="Singapore Map">
+          <img style="width:40%; border:5px solid rgb(32,32,32)" src="images/hawker_center.jpg" alt="Hawker Center">
 
         </div>
 
@@ -72,21 +78,102 @@
             Thus, it is difficult to carry one's meal from the vendor to a open table due to the large crowd at time.
           </p>
           <p>
-            This is a small simulation of a crowded hawker center. Use your arrow keys to control the player, avoid the incoming people, and reach the table at the end.
+            This is a small simulation of a crowded hawker center. Use your mouse and drag the blue circle, avoid the red circles, and reach the table at the end.
           </p>
         </div>
 
-        <div class="simulator">
-          <div id="player">You</div>
+        <!--Simulation-->
+
+        <div class="simulator_container">
+          <div class="simulator">
+
+            <!--Placing the Player, Obstacles and Goal-->
+            <div draggable=true id="player"></div>
+            <div class="obstacles" id="ob1"></div>
+            <div class="obstacles" id="ob2"></div>
+            <div class="obstacles" id="ob3"></div>
+            <div class="obstacles" id="ob4"></div>
+            <div class="obstacles" id="ob5"></div>
+            <div class="obstacles" id="ob6"></div>
+            <div class="obstacles" id="ob7"></div>
+            <div class="obstacles" id="ob8"></div>
+            <div class="obstacles" id="ob9"></div>
+
+            <div class="obstacles" id="ob10"></div>
+            <div class="obstacles" id="ob11"></div>
+            <div class="obstacles" id="ob12"></div>
+            <div class="obstacles" id="ob13"></div>
+            <div class="obstacles" id="ob14"></div>
+            <div class="obstacles" id="ob15"></div>
+            <div class="obstacles" id="ob16"></div>
+            <div class="obstacles" id="ob17"></div>
+            <div class="obstacles" id="ob18"></div>
+            <div class="obstacles" id="ob19"></div>
+
+            <div class="obstacles" id="ob20"></div>
+            <div class="obstacles" id="ob21"></div>
+            <div class="obstacles" id="ob22"></div>
+            <div class="obstacles" id="ob23"></div>
+            <div class="obstacles" id="ob24"></div>
+            <div class="obstacles" id="ob25"></div>
+            <div class="obstacles" id="ob26"></div>
+            <div class="obstacles" id="ob27"></div>
+            <div class="obstacles" id="ob28"></div>
+            <div class="obstacles" id="ob29"></div>
+
+            <div class="obstacles" id="ob30"></div>
+            <div class="obstacles" id="ob31"></div>
+            <div class="obstacles" id="ob32"></div>
+            <div class="obstacles" id="ob33"></div>
+            <div class="obstacles" id="ob34"></div>
+            <div class="obstacles" id="ob35"></div>
+            <div class="obstacles" id="ob36"></div>
+            <div class="obstacles" id="ob37"></div>
+            <div class="obstacles" id="ob38"></div>
+            <div class="obstacles" id="ob39"></div>
+
+            <div class="obstacles" id="ob40"></div>
+            <div class="obstacles" id="ob41"></div>
+            <div class="obstacles" id="ob42"></div>
+            <div class="obstacles" id="ob43"></div>
+            <div class="obstacles" id="ob44"></div>
+            <div class="obstacles" id="ob45"></div>
+            <div class="obstacles" id="ob46"></div>
+            <div class="obstacles" id="ob47"></div>
+            <div class="obstacles" id="ob48"></div>
+            <div class="obstacles" id="ob49"></div>
+            
+            <div class="obstacles" id="ob50"></div>
+            <div class="obstacles" id="ob51"></div>
+            <div class="obstacles" id="ob52"></div>
+            <div class="obstacles" id="ob53"></div>
+            <div class="obstacles" id="ob54"></div>
+            <div class="obstacles" id="ob55"></div>
+            <div class="obstacles" id="ob56"></div>
+            <div class="obstacles" id="ob57"></div>
+            <div class="obstacles" id="ob58"></div>
+            <div class="obstacles" id="ob59"></div>
+
+            <div class="obstacles" id="ob60"></div>
+            <div class="obstacles" id="ob61"></div>
+            <div class="obstacles" id="ob62"></div>
+            <div class="obstacles" id="ob63"></div>
+            <div class="obstacles" id="ob64"></div>
+            <div class="obstacles" id="ob65"></div>
+
+            <div id="goal"></div>
+
+          </div>
         </div>
        
 
       </div>
 
+      <!--Food Page-->
       <div class="page" id="page2">
         <h2>List of Singaporean Food</h2>
 
-
+        <!--Chinese Page-->
         <button class="button" id="chinesePageBtn">Chinese</button>
         <div id="pageChineseFood">
           <div class="chineseFoodPicture">
@@ -131,6 +218,7 @@
 
         </div>
 
+        <!--Malay/Indonesian Page-->
         <button class="button" id="malayPageBtn">Malay/Indonesian</button>
         <div id="pageMalayFood">
           <div class="malayFoodPicture">
@@ -174,6 +262,8 @@
           </div>
 
         </div>
+
+        <!--Indian Page-->
         <button class="button" id="indianPageBtn">Indian</button>
         <div id="pageIndianFood">
           <div class="indianFoodPicture">
@@ -219,21 +309,32 @@
 
       </div>
 
+      <!--Food Culture Page-->
       <div class="page" id="page3">
         <h2>Food Culture in Singapore</h2>
-        <div class="historyText">
-          <p>In 1918, Singapore was founded as an international shipping port. Due to this, Singapore's cuisine has been influenced by many different cultures</p>
-          <p>Singapore is located in between the Pacific and Indian oceans, surrounded by many Asian countries such as Indonesia, China, Malaysia and others. As such, the food and culture in Singapore is also just as diverse</p>
+
+        <!--Culture Text-->
+        <div class="cultureText">
+          <p>
+            Since Singapore is a multicultural nation, its food culture is widely diverse. 
+            A common greeting for many Singaporeans is asking "Have you eaten?", as a way to greet the other person.
+          </p>
+          <p>
+            The wide culture can also be seen in calender events or anniversaries.
+            One example is the lunar new year, where it is tradition to eat a pastry called "Nian Gao".
+            The pastry originates from China, but is an extension of Malay cuisine, influenced by the Chinese and Indians.
+          </p>
         </div>
+
+         <!--Culture Picture-->
+        <div class="culturePicture">
+          <img style="width:30%; border:5px solid rgb(32,32,32)" src="images/chinese_new_year.jpg" alt="Chinese New Year">
+          <img style="width:30%; border:5px solid rgb(32,32,32)" src="images/hari_raya.jpg" alt="Hari Raya">
+          <img style="width:30%; border:5px solid rgb(32,32,32)" src="images/deepavali.jpg" alt="Deepavali">
+        </div>
+
       
-        <img style="width:400px; border:5px solid rgb(32,32,32)" src="images/singapore_map.jpg" alt="Singapore Map">
-        <div class="historyText">
-          <p>It is believed that certain dishes that are part of Singaporean cuisine today predates the arrival of Raffles in 1819; some of these dishes include laksa, biryani and betel quid.</p>
-          <p>However, it is unknown when these dishes arrived in Singapore, as historical records on them are largely scattered and inaccurate as these dishes were largely made by early Singapore immigrants at home and not served in an establishment.</p>
-          <p>Adaptation of various dishes that were prepared by early Singapore immigrants to suit the ingredients and taste preferences were how some of the dishes were created;</p>
-          <p>some examples of such dishes are fish head curry,[5] kaya toast[6] and Hainanese chicken rice,[7] which are culinary staples in Singaporean cuisine today.</p>
-          
-        </div>
+        
       </div>
 
     </div>

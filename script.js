@@ -1,16 +1,19 @@
+/*jshint esversion: 6 */
+
 //target all elements to save to constants
 const page1btn=document.querySelector("#page1btn");
 const page2btn=document.querySelector("#page2btn");
 const page3btn=document.querySelector("#page3btn");
 var allpages=document.querySelectorAll(".page");
-var dropDown;
-var pageHeight = 0;
+
+//Declaring variables
+
 var fading;
 var overflow;
-var contentOpacity = 0;
 
 var playerX;
 var playerY;
+
 
 var distX;
 var distY;
@@ -20,7 +23,10 @@ var destinationY;
 
 var bounds;
 
-//select all subtopic pages
+
+var dragging = false;
+
+//Select all subtopic pages
 console.log(allpages);
 hideall();
 
@@ -38,27 +44,26 @@ function show(pgno){ //function to show selected page no
     onepage.style.display="inline";
 }
 
-function toggleFoodList(pgno, content){ //function to show selected page no
-    //select the page based on the parameter passed in
+function toggleFoodList(pgno, content){ 
+    //Select page based on parameter pased
     let onepage=document.querySelector("#page"+pgno);
-    //show the page
+
+    //Check if page is already displayed or not, and do the opposite
     if(onepage.style.height == 0 +"%" || onepage.style.height=="")
     {
+        //Toggle On
         onepage.style.height = 125 +"%";
         fading = setTimeout(() => fadeAnimation(content, 1),600);
         overflow = setTimeout(() => setOverflow(content, "visible"),600);
-
-        //dropDown = setInterval(() => dropDownAnimation(onepage, +5, 300),10);
     }
     else
     {
+        //Toggle Off
         onepage.style.height = 0 +"%";
         fading = setTimeout(() => fadeAnimation(content, -1),100);
         overflow = setTimeout(() => setOverflow(content, "hidden"),100);
     }
-    /*if(onepage.style.display=="block")
-        onepage.style.display="none";
-    else onepage.style.display="block";*/
+   
 }
 
 /*Listen for clicks on the buttons, assign anonymous
@@ -79,20 +84,19 @@ hamBtn.addEventListener("click",toggleMenus);
 const menuItemsList=document.querySelector("nav ul");
 
 function toggleMenus(){ /*open and close menu*/
-    if(menuItemsList.style.display=="inline-block")
+    if(menuItemsList.style.display=="inline")
         menuItemsList.style.display="none";
-    else menuItemsList.style.display="inline-block";
-}//can optimize using toggle class with css transitions
+    else menuItemsList.style.display="inline";
+}
 
-
+//Declaring food page
 const chinesePagebtn=document.querySelector("#chinesePageBtn");
 const malayPagebtn=document.querySelector("#malayPageBtn");
 const indianPagebtn=document.querySelector("#indianPageBtn");
 
 
 
-/*Listen for clicks on the buttons, assign anonymous
-eventhandler functions to call show function*/
+//Click event for food buttons
 chinesePagebtn.addEventListener("click", function () {
     toggleFoodList("ChineseFood",chineseContent);
 });
@@ -103,11 +107,12 @@ indianPagebtn.addEventListener("click", function () {
     toggleFoodList("IndianFood",indianContent);
 });
 
+//Declaring food content
 const chineseContent=document.querySelector(".chineseFoodPicture");
 const malayContent=document.querySelector(".malayFoodPicture");
 const indianContent=document.querySelector(".indianFoodPicture");
 
-
+//Fading animation
 function fadeAnimation(page, amount)
 {
    
@@ -123,33 +128,66 @@ function fadeAnimation(page, amount)
 
 }
 
+//Setting overflow to parameter passed in
 function setOverflow(page, displaySet)
 {
     page.style.overflow = displaySet;
 }
 
+//Declaring simulation and its components
 const player = document.getElementById("player");
+const goal = document.getElementById("goal");
 const simulator = document.querySelector(".simulator");
+const obstacles = document.getElementsByClassName("obstacles");
 
-simulator.addEventListener("mousemove", followMouse)
+//Drag and touch event for the player
+player.addEventListener("drag", followMouse);
+player.addEventListener("dragend", dragFalse);
+player.addEventListener("touchmove", followMouse);
+player.addEventListener("touchend", dragFalse);
 
+
+//Check if the two elements passed in overlap with one another
+function elementsOverlap(element1, element2) {
+    const boundsElement1 = element1.getBoundingClientRect();
+    const boundsElement2 = element2.getBoundingClientRect();
+  
+    if (boundsElement1.top > boundsElement2.bottom)
+        return false;
+    else if (boundsElement1.right < boundsElement2.left)
+        return false;
+    else if (boundsElement1.bottom < boundsElement2.top)
+        return false;
+    else if (boundsElement1.left > boundsElement2.right)
+        return false;
+
+    return true;
+        
+    
+}
+
+//Set destination to mouse position
 function followMouse(event)
 {
     bounds = simulator.getBoundingClientRect();
 
     destinationX = event.clientX - bounds.left - bounds.width * 0.5;
-    destinationY = event.clientY  - bounds.top - bounds.height;
-    destinationY += player.getBoundingClientRect().height * 0.5;
+    destinationY = event.clientY  - bounds.top - bounds.height * 0.5;
 
-   
-    
-   
+    dragging = true;
 
 }
 
-function ResetPos() {
+//Change dragging to false
+function dragFalse()
+{
+    dragging = false;
+}
+
+//Reset simulation
+function Reset() {
     playerX = 0;
-    playerY = 0; //reset to zero
+    playerY = 0;
     distX = 0;
     distY = 0;
     destinationX = 0;
@@ -158,37 +196,48 @@ function ResetPos() {
     
 }
 
-function MovePos(leftInc, topInc) {
-    playerX += leftInc;
-    playerY += topInc;
-    UpdatePlayerStyle();
-}
+
+
     
-//function to update ball css as well as display text
+//function to update player's location
 function UpdatePlayerStyle(){
-    distX = destinationX - playerX;
-    distY = destinationY - playerY;
-    playerX += distX * 0.05;
-    playerY += distY * 0.05;
-
-    console.log("player: " + Math.abs(playerY));
-    console.log("yes: " +  bounds.top);
-    if(Math.abs(playerY) > bounds.top)
+    if(dragging)
     {
-        playerY = -bounds.top;
+        //Update position
+        distX = destinationX - playerX;
+        distY = destinationY - playerY;
+        playerX += distX * 0.1;
+        playerY += distY * 0.1;
+
+  
+
+        //Check if player has collided with any obstacles
+        for(var i = 0; i < obstacles.length; i++)
+        {
+            if (elementsOverlap(player,obstacles[i]))
+            {
+
+                Reset();
+
+            }
+        }
+
+        //Check if player has reached the goal
+        if(elementsOverlap(player,goal))
+        {
+            goal.style.backgroundColor = "#FFFFFF";
+
+        }
+
+
+        player.style.left = playerX + "px";
+        player.style.top = playerY + "px";
+
+
+        
     }
-    
-
-
-    //player.style.left = playerX+"px"; //set left property to ball x variable
-   // player.style.top = playerY+"px"; //set top property to ball x variable
-
-   player.style.left = playerX + "px";
-   player.style.top = playerY + "px";
-
-   requestAnimationFrame(UpdatePlayerStyle);
+    requestAnimationFrame(UpdatePlayerStyle);
 }
     
-ResetPos();
+Reset();
 UpdatePlayerStyle();
-

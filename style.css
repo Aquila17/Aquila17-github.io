@@ -41,8 +41,10 @@ p{
 
 
 #page1{
+  height: 100%;
+  width: 100%;
   text-align: center;
-
+  
 }
 
 #page2{
@@ -98,10 +100,8 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
   justify-content: left;
   text-align: left;
   align-items: center;
+  width: 80%;
 
-  margin: 10px;
-  margin-top: 100px;
-  margin-bottom: 100px;
 }
 
 .historyRight
@@ -110,37 +110,464 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
   justify-content:right;
   text-align: right;
   align-items: center;
-  margin: 10px;
+  width: 80%;
 
-  margin-top: 100px;
-  margin-bottom: 100px;
+
+}
+
+.simulator_container
+{
+  height: 500px;
+  width: 500px;;
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .simulator
 {
-  display:flex;
+  position:relative;
+  display:inline-flex;
   align-items: center;
   justify-content: center;
   margin-top: 100px;
   margin-bottom: 100px;
 
   border: 5px solid black;
-  padding-top: 40%;
+  width: 90%;
+  height: 90%;
 }
 
 #player {
   background: cyan;
-  width: 100px;
-  height: 100px;
+  width: 4%;
+  height: 4%;
+  left:0;
+  top:0;
   border-radius: 50%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor:move;
 
 }
-  
 
+.obstacles{
+  background: lightcoral;
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#ob1
+{
+  left:35%;
+  top:45%;
+}
+  
+#ob2
+{
+  left:55%;
+  top:45%;
+}
+
+#ob3
+{
+  left:35%;
+  top: 40%;
+}
+  
+#ob4
+{
+  left:55%;
+  top:35%;
+}
+
+#ob5
+{
+  left:35%;
+  top:25%;
+}
+  
+#ob6
+{
+  left:55%;
+  top:25%;
+}
+#ob7
+{
+  left:35%;
+  top:17%;
+}
+  
+#ob8
+{
+  left:55%;
+  top:15%;
+}
+#ob9
+{
+  left:55%;
+  top:5%;
+}
+
+#ob10
+{
+  left:45%;
+  top:0%;
+}
+
+#ob11
+{
+  left:35%;
+  top:0%;
+}
+
+#ob12
+{
+  left:25%;
+  top:0%;
+}
+
+#ob13
+{
+  left:25%;
+  top:17%;
+}
+
+#ob14
+{
+  left:15%;
+  top:0%;
+}
+
+#ob15
+{
+  left:17%;
+  top:17%;
+}
+
+#ob16
+{
+  left:5%;
+  top:0%;
+}
+
+#ob17
+{
+  left:17%;
+  top:25%;
+}
+
+#ob18
+{
+  left:17%;
+  top:35%;
+}
+
+#ob19
+{
+  left:20%;
+  top:45%;
+}
+
+#ob20
+{
+  left:0%;
+  top:15%;
+}
+
+#ob21
+{
+  left:0%;
+  top:25%;
+}
+
+#ob22
+{
+  left:0%;
+  top:35%;
+}
+
+#ob23
+{
+  left:0%;
+  top:45%;
+}
+
+
+#ob24
+{
+  left:0%;
+  top:5%;
+}
+
+#ob25
+{
+  left:0%;
+  top:55%;
+}
+
+#ob26
+{
+  left:0%;
+  top:65%;
+}
+
+#ob27
+{
+  left:0%;
+  top:75%;
+}
+
+#ob28
+{
+  left:10%;
+  top:60%;
+}
+
+#ob29
+{
+  left:20%;
+  top:60%;
+}
+
+#ob30
+{
+  left:35%;
+  top:60%;
+}
+
+#ob31
+{
+  left:35%;
+  top:52%;
+}
+
+#ob32
+{
+  left:45%;
+  top:60%;
+}
+
+#ob33
+{
+  left:55%;
+  top:90%;
+}
+
+#ob34
+{
+  left:55%;
+  top:60%;
+}
+
+#ob35
+{
+  left:55%;
+  top:52%;
+}
+
+#ob36
+{
+  left:0%;
+  top:85%;
+}
+
+#ob37
+{
+  left:5%;
+  top:90%;
+}
+
+#ob38
+{
+  left:15%;
+  top:90%;
+}
+
+#ob39
+{
+  left:25%;
+  top:90%;
+}
+
+#ob40
+{
+  left:35%;
+  top:90%;
+}
+
+#ob41
+{
+  left:45%;
+  top:90%;
+}
+
+#ob42
+{
+  left:65%;
+  top:90%;
+}
+
+#ob43
+{
+  left:75%;
+  top:90%;
+}
+
+#ob44
+{
+  left:85%;
+  top:90%;
+}
+
+#ob45
+{
+  left:90%;
+  top:85%;
+}
+
+#ob46
+{
+  left:90%;
+  top:75%;
+}
+
+#ob47
+{
+  left:90%;
+  top:65%;
+}
+
+#ob48
+{
+  left:90%;
+  top:55%;
+}
+
+#ob49
+{
+  left:90%;
+  top:45%;
+}
+
+#ob50
+{
+  left:90%;
+  top:35%;
+}
+
+#ob51
+{
+  left:90%;
+  top:25%;
+}
+
+#ob52
+{
+  left:90%;
+  top:15%;
+}
+
+#ob53
+{
+  left:90%;
+  top:5%;
+}
+
+#ob54
+{
+  left:85%;
+  top:0%;
+}
+
+#ob55
+{
+  left:75%;
+  top:0%;
+}
+
+#ob56
+{
+  left:65%;
+  top:0%;
+}
+
+#ob57
+{
+  left:65%;
+  top:70%;
+}
+
+#ob58
+{
+  left:80%;
+  top:80%;
+}
+
+#ob59
+{
+  left:15%;
+  top:75%;
+}
+
+#ob60
+{
+  left:35%;
+  top:67%;
+}
+
+#ob61
+{
+  left:35%;
+  top:83%;
+}
+
+#ob62
+{
+  left:50%;
+  top:75%;
+}
+
+#ob63
+{
+  left:80%;
+  top:60%;
+}
+
+#ob64
+{
+  left: 62%;
+  top:40%;
+}
+
+#ob65
+{
+  left: 72%;
+  top:40%;
+}
+
+#goal {
+  background: lime;
+  width: 10%;
+  height: 10%;
+  left:72%;
+  top:17%;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
 
 #chinesePageBtn
 {
@@ -261,6 +688,20 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
   opacity: 0;
   transition: opacity 0.5s;
 }
+
+.cultureText
+  {
+    font-size: x-large;
+    color: rgb(115, 201, 255);
+  }
+
+  .culturePicture
+  {
+    display:flex;
+    justify-content: center; 
+    text-align: center; 
+    padding-bottom: 60px;
+  }
 
 @keyframes animateMove {
 
@@ -402,9 +843,36 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
 @media screen and (max-width:800px){
   nav ul li{display:block;} /*make a menu items vertical*/
   #hamIcon{display: block;} /* unhide menu icon */
-  nav ul{display:none;} /*hide the menu item list*/
+  nav ul{display:none; justify-content: center; text-align: center;} /*hide the menu item list*/
 
-  .page{height:135vh;}
+  #page2{height:135vh;}
+
+  .historyLeft
+  {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    margin: 10px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+  .historyRight
+  {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    margin: 10px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+
+
+
 
   .foodGroupLeft
   {
@@ -436,5 +904,13 @@ nav ul li{display:inline; align-items: center; justify-content: center;}
     margin-right: auto;
 
   }
+
+  .culturePicture
+  {
+    display:flex;
+    justify-content: center; 
+    text-align: center; 
+    padding-bottom: 40px;
+  }  
   
 }
